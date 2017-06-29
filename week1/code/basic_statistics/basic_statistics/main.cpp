@@ -1,8 +1,9 @@
+// Program to do basic statistics 
 #include <iostream>
 #include <vector>
 #include <cmath>
 #include "statistics.h"
-
+ 
 int main()
 {
 	// get the number of integers
