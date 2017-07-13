@@ -23,6 +23,10 @@ int main()
 	// Print balance
 	account.compute_balance();
 
+	// Method 2 of class construction
+	BankAccount account2 = BankAccount();
+
+	
 	system("pause");
 
 }

@@ -1,6 +1,13 @@
 #include "account.h"
 #include <iostream>
 
+BankAccount::BankAccount()
+{
+	_balance = 0;
+	_min_balance = 0;
+	_penalty_fee = 0;
+}
+
 BankAccount::BankAccount(float initial_deposit, float minimum_balance, float penalty_fee)
 {
 	_balance = initial_deposit;
@@ -27,12 +34,16 @@ void BankAccount::enter_transactions()
 		float amount;
 		while (!(std::cin >> amount))
 		{
-			std::cout << "Transaction must be a float value ($): ";
+			tell_user_they_are_stupid();
 			std::cin.clear();
 			std::cin.ignore(1000);
 		}
 		_history.push_back(amount);
 	}
+}
+void BankAccount::tell_user_they_are_stupid()
+{
+	std::cout << "Transaction must be a float value ($): ";
 }
 
 // function to process the transactions and return the account balance
